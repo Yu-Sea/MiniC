@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniC - 物联网中枢 Agent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="float-shape shape-1"></div>
+        <div class="float-shape shape-2"></div>
+        <div class="float-shape shape-3"></div>
+        <div class="float-shape shape-4"></div>
+        <div class="float-shape shape-5"></div>
+        <div class="float-shape shape-6"></div>
+        <div class="float-shape shape-7"></div>
+        <div class="float-shape shape-8"></div>
+        <div class="float-shape shape-9"></div>
+        <div class="float-shape shape-10"></div>
+        <div class="float-shape shape-11"></div>
+        <div class="float-shape shape-12"></div>
+    </div>
+
+    <section class="layer layer-0" data-layer="0">
+        <div class="layer-content">
+            <div class="hero-brand">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span class="hero-badge-text">开源 · 物联网中枢 · Agent</span>
+                </div>
+                <h1 class="hero-title hero-title-main">
+                    <span class="letter" data-letter="M">M</span>
+                    <span class="letter" data-letter="i">i</span>
+                    <span class="letter" data-letter="n">n</span>
+                    <span class="letter" data-letter="i">i</span>
+                    <span class="letter letter-c" data-letter="C">C</span>
+                </h1>
+                <p class="hero-subtitle hero-subtitle-main">Lightweight IoT Central Agent</p>
+                <div class="hero-quick-row">
+                    <a href="https://github.com/Yu-Sea" target="_blank" class="hero-btn hero-btn-ghost">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.9-.39.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.73.81 1.17 1.83 1.17 3.09 0 4.41-2.69 5.39-5.25 5.67.41.35.77 1.04.77 2.11 0 1.52-.01 2.75-.01 3.13 0 .31.21.67.8.56C20.22 21.38 23.5 17.07 23.5 12 23.5 5.73 18.27.5 12 .5z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <button class="hero-btn hero-btn-solid" onclick="document.querySelector('.layer-1').scrollIntoView({behavior:'smooth'});">
+                        <span>开始探索</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 12 19 19 12"></polyline><line x1="12" y1="5" x2="12" y2="19"></line></svg>
+                    </button>
+                </div>
+                <div class="hero-tags">
+                    <span class="hero-tag">
+                        <svg viewBox="0 0 18 18" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2 L15 5 V10 C15 14 12.3 16.8 9 17.5 C5.7 16.8 3 14 3 10 V5 Z" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.4 9.6 L8.6 10.8 L11 8.4" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        只读安全
+                    </span>
+                    <span class="hero-tag">
+                        <svg viewBox="0 0 18 18" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 2 L4 11 H9 L7 16 L14 7 H9 Z" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        轻量高效
+                    </span>
+                    <span class="hero-tag">
+                        <svg viewBox="0 0 18 18" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="5.2" stroke="#2563EB" stroke-width="1.6"/><path d="M6.8 7.4 L7.2 7.4 M10.8 7.4 L11.2 7.4" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/><path d="M7 10.6 Q9 12 11 10.6" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        自适应LLM
+                    </span>
+                    <span class="hero-tag">
+                        <svg viewBox="0 0 18 18" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3.8 Q6 3.8 4.5 6" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round"/><path d="M9 3.8 Q12 3.8 13.5 6" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round"/><path d="M9 6.2 Q7 6.2 5.8 7.8" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/><path d="M9 6.2 Q11 6.2 12.2 7.8" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="11" r="2.4" stroke="#2563EB" stroke-width="1.6"/><line x1="9" y1="13.4" x2="9" y2="15.4" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        HTTP / MQTT
+                    </span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <p class="scroll-text">向下滑动探索</p>
+            </div>
+
+            <div class="floating-nav-fab fab-intro"  data-target="layer-1">
+                <div class="fab-halo"></div>
+                <div class="fab-core">
+                    <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 12 C10 9.2 12.2 8 15 8 H 33 C 35.8 8 38 9.2 38 12 V 36 C 38 38.8 35.8 40 33 40 H 15 C 12.2 40 10 38.8 10 36 Z" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.2" stroke-linejoin="round"/>
+                        <path d="M16 18 H 32 M16 24 H 28 M16 30 H 30" stroke="#2563EB" stroke-width="2.3" stroke-linecap="round"/>
+                        <circle cx="32" cy="12" r="5.2" fill="#3B82F6" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M30.4 12 L 31.7 13.3 L 33.9 10.9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="fab-tooltip"><span class="fab-label">介绍</span></div>
+            </div>
+
+            <div class="floating-nav-fab fab-arch"  data-target="layer-2">
+                <div class="fab-halo"></div>
+                <div class="fab-core">
+                    <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="5.5" fill="#3B82F6" stroke="#ffffff" stroke-width="2.2"/>
+                        <circle cx="24" cy="24" r="11"  fill="none"   stroke="#60A5FA" stroke-width="1.8" stroke-dasharray="2 3"/>
+                        <circle cx="24" cy="7"  r="4"    fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.9"/>
+                        <circle cx="24" cy="41" r="4"    fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.9"/>
+                        <circle cx="7"  cy="24" r="4"    fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.9"/>
+                        <circle cx="41" cy="24" r="4"    fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.9"/>
+                        <line x1="24" y1="11.5" x2="24" y2="18.5" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="24" y1="29.5" x2="24" y2="37"   stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="11.5" y1="24" x2="18.5" y2="24" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="29.5" y1="24" x2="37"   y2="24" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="fab-tooltip"><span class="fab-label">架构</span></div>
+            </div>
+
+            <div class="floating-nav-fab fab-safe"  data-target="layer-3">
+                <div class="fab-halo"></div>
+                <div class="fab-core">
+                    <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 5 L 40 12 V 25 C 40 35 32.2 42.5 24 44 C 15.8 42.5 8 35 8 25 V 12 Z" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.3" stroke-linejoin="round"/>
+                        <path d="M24 14 L 34 18.5 V 25 C 34 32.2 29.4 38 24 39 C 18.6 38 14 32.2 14 25 V 18.5 Z" fill="#BFDBFE"/>
+                        <path d="M18.5 24.5 L 22.5 28.5 L 30.5 20" stroke="#1D4ED8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="fab-tooltip"><span class="fab-label">安全</span></div>
+            </div>
+
+            <div class="floating-nav-fab fab-scene" data-target="layer-4">
+                <div class="fab-halo"></div>
+                <div class="fab-core">
+                    <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 38 L 8 22 L 24 10 L 40 22 L 40 38 Z" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.3" stroke-linejoin="round"/>
+                        <path d="M18 38 L 18 28 C 18 25.2 20.2 23 23 23 H 25 C 27.8 23 30 25.2 30 28 L 30 38" fill="#ffffff" stroke="#2563EB" stroke-width="2.1" stroke-linejoin="round"/>
+                        <circle cx="24" cy="31" r="2.2" fill="#1D4ED8"/>
+                        <rect x="20" y="17" width="4" height="4" rx="1" fill="#60A5FA" stroke="#2563EB" stroke-width="1.5"/>
+                        <rect x="32" y="27" width="4" height="4" rx="1" fill="#60A5FA" stroke="#2563EB" stroke-width="1.5"/>
+                        <path d="M4 32 H 8 M 40 32 H 44" stroke="#93C5FD" stroke-width="2.2" stroke-linecap="round"/>
+                        <circle cx="4"  cy="32" r="2.3" fill="#93C5FD"/>
+                        <circle cx="44" cy="32" r="2.3" fill="#93C5FD"/>
+                    </svg>
+                </div>
+                <div class="fab-tooltip"><span class="fab-label">场景</span></div>
+            </div>
+
+            <div class="floating-nav-fab fab-thanks" data-target="layer-5">
+                <div class="fab-halo"></div>
+                <div class="fab-core">
+                    <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 40 C 24 40 8 30 8 19 C 8 13.5 12.5 10 16.5 10 C 19.8 10 22.2 11.8 24 14.5 C 25.8 11.8 28.2 10 31.5 10 C 35.5 10 40 13.5 40 19 C 40 30 24 40 24 40 Z" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.3" stroke-linejoin="round"/>
+                        <path d="M17 21 C 18 24.5 20.7 26.5 24 27 C 27.3 26.5 30 24.5 31 21" fill="none" stroke="#2563EB" stroke-width="2.1" stroke-linecap="round"/>
+                        <circle cx="16.5" cy="17.2" r="1.8" fill="#60A5FA" opacity="0.9"/>
+                        <circle cx="31.5" cy="17.2" r="1.8" fill="#60A5FA" opacity="0.9"/>
+                        <path d="M24 34 L 23 37.8 H 20.5 L 22.5 40.2 L 21.5 44 L 24 41.6 L 26.5 44 L 25.5 40.2 L 27.5 37.8 H 25 Z" fill="#3B82F6"/>
+                    </svg>
+                </div>
+                <div class="fab-tooltip"><span class="fab-label">感谢</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="layer layer-1" data-layer="1">
+        <div class="layer-content layer-1-content">
+            <div class="l1-side l1-left">
+                <div class="l1-kicker">— Open Source · IoT Central Agent</div>
+                <h2 class="layer-title l1-title animated-name">
+                    <span class="name-char" data-char="M">M</span>
+                    <span class="name-char" data-char="i">i</span>
+                    <span class="name-char" data-char="n">n</span>
+                    <span class="name-char" data-char="i">i</span>
+                    <span class="name-char" data-char="C">C</span>
+                </h2>
+                <div class="l1-author">
+                    <svg class="author-avatar" viewBox="0 0 64 64" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="avatarG" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#DBEAFE"/>
+                                <stop offset="100%" stop-color="#BFDBFE"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="32" cy="32" r="30" fill="url(#avatarG)" stroke="#60A5FA" stroke-width="2"/>
+                        <circle cx="32" cy="26" r="9" fill="#ffffff" stroke="#3B82F6" stroke-width="2"/>
+                        <path d="M14 52 C 14 42 22 37 32 37 C 42 37 50 42 50 52" fill="#ffffff" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div class="author-meta">
+                        <div class="author-line1">Designed & Built by <a href="https://github.com/Yu-Sea" target="_blank" class="author-link">Yu-Sea</a></div>
+                        <div class="author-line2">
+                            <span class="chip chip-blue">
+                                <svg viewBox="0 0 14 14" width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1 L8 5.5 L12.5 5 L8.8 7.8 L10 12.5 L7 9.8 L4 12.5 L5.2 7.8 L1.5 5 L6 5.5 Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+                                Open Source
+                            </span>
+                            <span class="chip chip-ghost">GitHub · Yu-Sea</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="l1-lead">
+                    专为<strong class="hl-ink">物联网中枢</strong>而生的轻量开源 Agent。<br/>
+                    针对各类 API 实现了<strong class="hl-ink">可自动执行</strong>的智能调度 — LLM 自主适配项目、构建专属流程、
+                    周期巡检、按需总结，设备经网关对接 HTTP / MQTT 直通大脑思考。
+                </p>
+                <div class="l1-stats">
+                    <div class="stat">
+                        <div class="stat-num">5+</div>
+                        <div class="stat-cap">核心能力模块</div>
+                    </div>
+                    <div class="stat-split"></div>
+                    <div class="stat">
+                        <div class="stat-num">∞</div>
+                        <div class="stat-cap">LLM 自构建流程</div>
+                    </div>
+                    <div class="stat-split"></div>
+                    <div class="stat">
+                        <div class="stat-num">2</div>
+                        <div class="stat-cap">协议兼容 · HTTP/MQTT</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l1-side l1-right">
+                <svg class="l1-orbit" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="l1Core" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%"  stop-color="#BFDBFE"/>
+                            <stop offset="55%" stop-color="#93C5FD"/>
+                            <stop offset="100%" stop-color="#60A5FA"/>
+                        </linearGradient>
+                        <linearGradient id="l1CoreIn" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.75"/>
+                            <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.35"/>
+                        </linearGradient>
+                        <radialGradient id="l1Universe" cx="50%" cy="50%" r="50%">
+                            <stop offset="55%"  stop-color="#DBEAFE" stop-opacity="0"/>
+                            <stop offset="78%"  stop-color="#BFDBFE" stop-opacity="0.45"/>
+                            <stop offset="92%"  stop-color="#93C5FD" stop-opacity="0.75"/>
+                            <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.35"/>
+                        </radialGradient>
+                        <radialGradient id="starBlueA" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+                            <stop offset="28%"  stop-color="#93C5FD" stop-opacity="0.95"/>
+                            <stop offset="60%"  stop-color="#3B82F6" stop-opacity="0.45"/>
+                            <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+                        </radialGradient>
+                        <radialGradient id="starBlueB" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+                            <stop offset="32%"  stop-color="#BFDBFE" stop-opacity="0.92"/>
+                            <stop offset="65%"  stop-color="#60A5FA" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+                        </radialGradient>
+                        <filter id="starBlur" x="-200%" y="-200%" width="500%" height="500%">
+                            <feGaussianBlur stdDeviation="2.2" result="b"/>
+                            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                        <filter id="starBlurBig" x="-200%" y="-200%" width="500%" height="500%">
+                            <feGaussianBlur stdDeviation="3.4" result="b"/>
+                            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                        <filter id="l1CoreGlow" x="-80%" y="-80%" width="260%" height="260%">
+                            <feGaussianBlur stdDeviation="8" result="b"/>
+                            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+
+                    <circle cx="260" cy="260" r="252" fill="url(#l1Universe)"/>
+                    <g opacity="0.62">
+                        <circle cx="260" cy="260" r="248" fill="none" stroke="#93C5FD" stroke-width="1" stroke-dasharray="2 10"/>
+                        <circle cx="260" cy="260" r="232" fill="none" stroke="#60A5FA" stroke-width="0.8" stroke-dasharray="1.5 14"/>
+                        <circle cx="260" cy="260" r="206" fill="none" stroke="#BFDBFE" stroke-width="1" stroke-dasharray="2 9"/>
+                        <circle cx="260" cy="260" r="172" fill="none" stroke="#93C5FD" stroke-width="0.75" stroke-dasharray="1.2 8"/>
+                        <circle cx="260" cy="260" r="130" fill="none" stroke="#60A5FA" stroke-width="0.7" stroke-dasharray="1 6"/>
+                        <circle cx="260" cy="260" r="92"  fill="none" stroke="#BFDBFE" stroke-width="0.7" stroke-dasharray="1 5"/>
+                    </g>
+
+                    <g opacity="0.9">
+                        <circle cx="128" cy="148" r="2.4" fill="#93C5FD"/>
+                        <circle cx="190" cy="96"  r="1.6" fill="#60A5FA"/>
+                        <circle cx="334" cy="108" r="1.9" fill="#3B82F6"/>
+                        <circle cx="410" cy="166" r="2.6" fill="#93C5FD"/>
+                        <circle cx="444" cy="252" r="1.4" fill="#60A5FA"/>
+                        <circle cx="420" cy="344" r="1.8" fill="#BFDBFE"/>
+                        <circle cx="356" cy="420" r="2.2" fill="#60A5FA"/>
+                        <circle cx="252" cy="448" r="1.5" fill="#3B82F6"/>
+                        <circle cx="154" cy="420" r="2.0" fill="#93C5FD"/>
+                        <circle cx="94"  cy="338" r="1.7" fill="#BFDBFE"/>
+                        <circle cx="74"  cy="244" r="2.3" fill="#60A5FA"/>
+                        <circle cx="110" cy="210" r="1.5" fill="#3B82F6"/>
+                        <circle cx="218" cy="158" r="1.2" fill="#93C5FD"/>
+                        <circle cx="310" cy="152" r="1.3" fill="#60A5FA"/>
+                        <circle cx="370" cy="216" r="1.1" fill="#BFDBFE"/>
+                        <circle cx="366" cy="310" r="1.4" fill="#93C5FD"/>
+                        <circle cx="286" cy="382" r="1.7" fill="#60A5FA"/>
+                        <circle cx="186" cy="372" r="1.3" fill="#3B82F6"/>
+                        <circle cx="138" cy="292" r="1.6" fill="#BFDBFE"/>
+                        <circle cx="210" cy="318" r="1.0" fill="#60A5FA"/>
+                        <circle cx="300" cy="330" r="1.2" fill="#93C5FD"/>
+                    </g>
+
+                    <g class="l1-star-node" filter="url(#starBlurBig)">
+                        <circle cx="260" cy="92"  r="26" fill="url(#starBlueA)"/>
+                        <circle cx="260" cy="92"  r="2.8" fill="#ffffff"/>
+                    </g>
+                    <text x="260" y="142" text-anchor="middle" fill="#1E3A8A" font-size="13.5" font-weight="700" font-family="Inter, sans-serif">智能文档</text>
+
+                    <g class="l1-star-node" filter="url(#starBlurBig)">
+                        <circle cx="438" cy="260" r="28" fill="url(#starBlueB)"/>
+                        <circle cx="438" cy="260" r="3" fill="#ffffff"/>
+                    </g>
+                    <text x="438" y="310" text-anchor="middle" fill="#1E3A8A" font-size="13.5" font-weight="700" font-family="Inter, sans-serif">LLM 自适应</text>
+
+                    <g class="l1-star-node" filter="url(#starBlurBig)">
+                        <circle cx="260" cy="432" r="28" fill="url(#starBlueA)"/>
+                        <circle cx="260" cy="432" r="3" fill="#ffffff"/>
+                    </g>
+                    <text x="260" y="480" text-anchor="middle" fill="#1E3A8A" font-size="13.5" font-weight="700" font-family="Inter, sans-serif">定期执行</text>
+
+                    <g class="l1-star-node" filter="url(#starBlurBig)">
+                        <circle cx="82"  cy="260" r="26" fill="url(#starBlueB)"/>
+                        <circle cx="82"  cy="260" r="2.8" fill="#ffffff"/>
+                    </g>
+                    <text x="82" y="310" text-anchor="middle" fill="#1E3A8A" font-size="13.5" font-weight="700" font-family="Inter, sans-serif">网关接入</text>
+
+                    <g filter="url(#l1CoreGlow)">
+                        <circle cx="260" cy="260" r="84" fill="#ffffff"/>
+                        <circle cx="260" cy="260" r="70" fill="url(#l1Core)"/>
+                        <circle cx="260" cy="260" r="60" fill="url(#l1CoreIn)"/>
+                        <text x="260" y="254" text-anchor="middle" fill="#1E3A8A" font-family="Poppins, sans-serif" font-weight="800" font-size="28">MiniC</text>
+                        <text x="260" y="280" text-anchor="middle" fill="#2563EB" font-family="Inter, sans-serif" font-weight="600" font-size="11" letter-spacing="2.4">AGENT · 中枢</text>
+                        <g transform="translate(260 296)">
+                            <circle cx="-14" cy="0" r="2.4" fill="#3B82F6"/>
+                            <circle cx="-7"  cy="0" r="2.9" fill="#60A5FA"/>
+                            <circle cx="0"   cy="0" r="4.2" fill="#ffffff" opacity="0.97"/>
+                            <circle cx="7"   cy="0" r="2.9" fill="#60A5FA"/>
+                            <circle cx="14"  cy="0" r="2.4" fill="#3B82F6"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="layer layer-2" data-layer="2">
+        <div class="layer-content">
+            <h2 class="layer-title">中枢架构 · 万物互联</h2>
+            <p class="layer-desc">以 Agent 为核心，API 接口向外辐射，构建高效协同的物联网中枢</p>
+
+            <div class="architecture-container architecture-container-wide">
+                <svg class="arch-svg arch-svg-large" viewBox="0 0 1380 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="coreGradBig" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%"  style="stop-color:#BFDBFE"/>
+                            <stop offset="50%" style="stop-color:#93C5FD"/>
+                            <stop offset="100%" style="stop-color:#60A5FA"/>
+                        </linearGradient>
+                        <linearGradient id="coreInnerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%"  style="stop-color:#EFF6FF;stop-opacity:0.55"/>
+                            <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:0.25"/>
+                        </linearGradient>
+                        <linearGradient id="nodeGradBig" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%"  style="stop-color:#EFF6FF"/>
+                            <stop offset="100%" style="stop-color:#ffffff"/>
+                        </linearGradient>
+                        <linearGradient id="connBaseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%"   style="stop-color:#DBEAFE;stop-opacity:0.35"/>
+                            <stop offset="50%"  style="stop-color:#BFDBFE;stop-opacity:0.9"/>
+                            <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:0.35"/>
+                        </linearGradient>
+                        <linearGradient id="connFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%"   style="stop-color:#93C5FD;stop-opacity:0"/>
+                            <stop offset="30%"  style="stop-color:#60A5FA;stop-opacity:0.9"/>
+                            <stop offset="50%"  style="stop-color:#2563EB;stop-opacity:1"/>
+                            <stop offset="70%"  style="stop-color:#60A5FA;stop-opacity:0.9"/>
+                            <stop offset="100%" style="stop-color:#93C5FD;stop-opacity:0"/>
+                        </linearGradient>
+                        <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%"   style="stop-color:#DBEAFE;stop-opacity:0.6"/>
+                            <stop offset="50%"  style="stop-color:#BFDBFE;stop-opacity:0.9"/>
+                            <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:0.6"/>
+                        </linearGradient>
+                        <linearGradient id="ringGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%"   style="stop-color:#EFF6FF;stop-opacity:0.5"/>
+                            <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:0.5"/>
+                        </linearGradient>
+                        <filter id="bigShadow" x="-120%" y="-120%" width="340%" height="340%">
+                            <feDropShadow dx="0" dy="16" stdDeviation="26" flood-color="#3B82F6" flood-opacity="0.24"/>
+                            <feDropShadow dx="0" dy="6"  stdDeviation="10" flood-color="#1D4ED8" flood-opacity="0.1"/>
+                        </filter>
+                        <filter id="medShadow" x="-80%" y="-80%" width="260%" height="260%">
+                            <feDropShadow dx="0" dy="8"  stdDeviation="14" flood-color="#3B82F6" flood-opacity="0.18"/>
+                            <feDropShadow dx="0" dy="3"  stdDeviation="6"  flood-color="#2563EB" flood-opacity="0.08"/>
+                        </filter>
+                        <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+                            <feGaussianBlur stdDeviation="3"/>
+                        </filter>
+                        <filter id="dotGlow" x="-150%" y="-150%" width="400%" height="400%">
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <g opacity="0.35">
+                        <circle cx="690" cy="430" r="330" fill="none" stroke="url(#ringGrad2)" stroke-width="1" stroke-dasharray="3 10"/>
+                        <circle cx="690" cy="430" r="240" fill="none" stroke="url(#ringGrad1)" stroke-width="1.1" stroke-dasharray="2 6"/>
+                        <circle cx="690" cy="430" r="155" fill="none" stroke="#BFDBFE" stroke-width="0.8" stroke-dasharray="1 4" opacity="0.6"/>
+                    </g>
+
+                    <g class="conn-base">
+                        <path d="M 690 340 C 660 240 580 180 480 156"                fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                        <path d="M 690 340 C 720 240 800 180 900 156"                fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                        <path d="M 605 430 C 508 430 408 418 310 426"                 fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                        <path d="M 775 430 C 872 430 972 418 1070 426"                fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                        <path d="M 655 500 C 586 578 486 648 372 680"                 fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                        <path d="M 725 500 C 794 578 894 648 1008 680"                fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                        <path d="M 690 340 C 690 238 690 160 690 74"                  fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                        <path d="M 690 520 C 690 616 690 698 690 792"                 fill="none" stroke="url(#connBaseGrad)" stroke-width="4"   stroke-linecap="round"/>
+                    </g>
+
+                    <g class="conn-flow">
+                        <path d="M 690 340 C 660 240 580 180 480 156" fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 180 1320" dur="2.6s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="2.6s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 690 340 C 720 240 800 180 900 156" fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 180 1320" dur="2.8s" begin="0.2s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="2.8s" begin="0.2s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 605 430 C 508 430 408 418 310 426"  fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 200 1300" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 775 430 C 872 430 972 418 1070 426" fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 200 1300" dur="2.5s" begin="0.12s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="2.5s" begin="0.12s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 655 500 C 586 578 486 648 372 680"  fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 190 1310" dur="2.9s" begin="0.5s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="2.9s" begin="0.5s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 725 500 C 794 578 894 648 1008 680" fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 190 1310" dur="2.7s" begin="0.32s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="2.7s" begin="0.32s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 690 340 C 690 238 690 160 690 74"  fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 150 1350" dur="2.3s" begin="0.18s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="2.3s" begin="0.18s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 690 520 C 690 616 690 698 690 792" fill="none" stroke="url(#connFlowGrad)" stroke-width="5" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0 1500; 150 1350" dur="3.0s" begin="0.28s" repeatCount="indefinite"/>
+                            <animate attributeName="stroke-dashoffset" values="0; -1500" dur="3.0s" begin="0.28s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+
+                    <g class="conn-hub-dots" opacity="0.96">
+                        <circle cx="690" cy="340" r="8.5"   fill="#ffffff" stroke="#3B82F6" stroke-width="2.2" filter="url(#dotGlow)"/>
+                        <circle cx="690" cy="430" r="11"    fill="#ffffff" stroke="#2563EB" stroke-width="2.8" filter="url(#dotGlow)"/>
+                        <circle cx="690" cy="520" r="8.5"   fill="#ffffff" stroke="#3B82F6" stroke-width="2.2" filter="url(#dotGlow)"/>
+                        <circle cx="605" cy="430" r="7.5"   fill="#ffffff" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="775" cy="430" r="7.5"   fill="#ffffff" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="655" cy="500" r="7.5"   fill="#ffffff" stroke="#3B82F6" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="725" cy="500" r="7.5"   fill="#ffffff" stroke="#3B82F6" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="480" cy="156" r="7"     fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="900" cy="156" r="7"     fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="310" cy="426" r="7"     fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="1070" cy="426" r="7"    fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="372" cy="680" r="7"     fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="1008" cy="680" r="7"    fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="690" cy="74"  r="7"     fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                        <circle cx="690" cy="792" r="7"     fill="#EFF6FF" stroke="#2563EB" stroke-width="2"   filter="url(#dotGlow)"/>
+                    </g>
+
+                    <g class="conn-flow-dots">
+                        <circle r="6.2" fill="#3B82F6" filter="url(#softGlow)" opacity="0.95">
+                            <animateMotion dur="2.6s" repeatCount="indefinite" path="M 690 340 C 660 240 580 180 480 156"/>
+                        </circle>
+                        <circle r="6.2" fill="#3B82F6" filter="url(#softGlow)" opacity="0.95">
+                            <animateMotion dur="2.8s" begin="0.2s" repeatCount="indefinite" path="M 690 340 C 720 240 800 180 900 156"/>
+                        </circle>
+                        <circle r="6.6" fill="#2563EB" filter="url(#softGlow)" opacity="0.98">
+                            <animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite" path="M 605 430 C 508 430 408 418 310 426"/>
+                        </circle>
+                        <circle r="6.6" fill="#2563EB" filter="url(#softGlow)" opacity="0.98">
+                            <animateMotion dur="2.5s" begin="0.12s" repeatCount="indefinite" path="M 775 430 C 872 430 972 418 1070 426"/>
+                        </circle>
+                        <circle r="6.2" fill="#3B82F6" filter="url(#softGlow)" opacity="0.95">
+                            <animateMotion dur="2.9s" begin="0.5s" repeatCount="indefinite" path="M 655 500 C 586 578 486 648 372 680"/>
+                        </circle>
+                        <circle r="6.2" fill="#3B82F6" filter="url(#softGlow)" opacity="0.95">
+                            <animateMotion dur="2.7s" begin="0.32s" repeatCount="indefinite" path="M 725 500 C 794 578 894 648 1008 680"/>
+                        </circle>
+                        <circle r="5.4" fill="#1D4ED8" filter="url(#softGlow)" opacity="0.98">
+                            <animateMotion dur="2.3s" begin="0.18s" repeatCount="indefinite" path="M 690 340 C 690 238 690 160 690 74"/>
+                        </circle>
+                        <circle r="5.4" fill="#1D4ED8" filter="url(#softGlow)" opacity="0.98">
+                            <animateMotion dur="3.0s" begin="0.28s" repeatCount="indefinite" path="M 690 520 C 690 616 690 698 690 792"/>
+                        </circle>
+                    </g>
+
+                    <g class="core-big">
+                        <circle class="pulseRing pr-a" cx="690" cy="430" r="112" fill="none" stroke="#60A5FA" stroke-width="1.3" opacity="0.6"/>
+                        <circle class="pulseRing pr-b" cx="690" cy="430" r="152" fill="none" stroke="#93C5FD" stroke-width="1"   opacity="0.45"/>
+                        <circle class="pulseRing pr-c" cx="690" cy="430" r="198" fill="none" stroke="#BFDBFE" stroke-width="0.7" opacity="0.35"/>
+                        <g filter="url(#bigShadow)">
+                            <circle cx="690" cy="430" r="108" fill="white"/>
+                            <circle cx="690" cy="430" r="96"  fill="url(#coreGradBig)"/>
+                            <circle cx="690" cy="430" r="88"  fill="url(#coreInnerGrad)"/>
+                            <text x="690" y="414" text-anchor="middle" fill="#1E3A8A" font-family="Poppins, sans-serif" font-weight="800" font-size="37">MiniC</text>
+                            <text x="690" y="450" text-anchor="middle" fill="#2563EB" font-family="Inter, sans-serif" font-weight="600" font-size="14" letter-spacing="2.6">AGENT · 中枢</text>
+                            <g opacity="0.9" transform="translate(690 472)">
+                                <circle cx="-22" cy="0" r="3.2" fill="#3B82F6"/>
+                                <circle cx="-11" cy="0" r="3.8" fill="#60A5FA"/>
+                                <circle cx="0"    cy="0" r="5.2" fill="#ffffff" opacity="0.97"/>
+                                <circle cx="11"   cy="0" r="3.8" fill="#60A5FA"/>
+                                <circle cx="22"   cy="0" r="3.2" fill="#3B82F6"/>
+                            </g>
+                        </g>
+                    </g>
+
+                    <g class="api-node-big node-gateway" filter="url(#medShadow)">
+                        <rect x="618" y="20"  width="144" height="92" rx="24" fill="url(#nodeGradBig)"/>
+                        <rect x="626" y="28"  width="128" height="76" rx="20" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(640 40) scale(0.92)">
+                            <rect x="0" y="8" width="104" height="40" rx="11" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+                            <rect x="7" y="15" width="34" height="26" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.2"/>
+                            <rect x="48" y="15" width="49" height="26" rx="6" fill="none" stroke="#3B82F6" stroke-width="1.7"/>
+                            <line x1="54" y1="23" x2="95" y2="23" stroke="#2563EB" stroke-width="1.8"/>
+                            <line x1="54" y1="29" x2="89" y2="29" stroke="#60A5FA" stroke-width="1.5"/>
+                            <line x1="54" y1="35" x2="82" y2="35" stroke="#93C5FD" stroke-width="1.2"/>
+                            <line x1="24" y1="2"  x2="24" y2="8"  stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round"/>
+                            <line x1="48" y1="2"  x2="48" y2="8"  stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round"/>
+                            <line x1="72" y1="2"  x2="72" y2="8"  stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round"/>
+                            <circle cx="88" cy="51" r="2.6" fill="#10B981"/>
+                        </g>
+                        <text x="690" y="140" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">设备网关</text>
+                    </g>
+
+                    <g class="api-node-big node-http" filter="url(#medShadow)">
+                        <rect x="400" y="98" width="160" height="96" rx="24" fill="url(#nodeGradBig)"/>
+                        <rect x="408" y="106" width="144" height="80" rx="20" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(430 120) scale(0.92)">
+                            <rect x="0" y="0" width="112" height="64" rx="11" fill="none" stroke="#2563EB" stroke-width="2.4"/>
+                            <line x1="0" y1="18" x2="112" y2="18" stroke="#2563EB" stroke-width="2.2"/>
+                            <circle cx="8"   cy="9"  r="2.4" fill="#EF4444"/>
+                            <circle cx="18"  cy="9"  r="2.4" fill="#F59E0B"/>
+                            <circle cx="28"  cy="9"  r="2.4" fill="#10B981"/>
+                            <rect x="46"  y="4"  width="46" height="11" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.1"/>
+                            <circle cx="55"  cy="30" r="2.6" fill="#3B82F6"/>
+                            <circle cx="73"  cy="30" r="2.6" fill="#3B82F6"/>
+                            <circle cx="91"  cy="30" r="2.6" fill="#3B82F6"/>
+                            <rect x="12"  y="40" width="88" height="3.4" rx="1.7" fill="#DBEAFE"/>
+                            <rect x="12"  y="48" width="66" height="3.4" rx="1.7" fill="#EFF6FF"/>
+                            <rect x="12"  y="56" width="80" height="3.4" rx="1.7" fill="#DBEAFE"/>
+                        </g>
+                        <text x="480" y="222" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">HTTP</text>
+                    </g>
+
+                    <g class="api-node-big node-mqtt" filter="url(#medShadow)">
+                        <rect x="820" y="98" width="160" height="96" rx="24" fill="url(#nodeGradBig)"/>
+                        <rect x="828" y="106" width="144" height="80" rx="20" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(856 122) scale(0.96)">
+                            <rect x="20" y="34" width="48" height="30" rx="7" fill="none" stroke="#2563EB" stroke-width="2.4"/>
+                            <rect x="35" y="49" width="18" height="15" rx="3.5" fill="#2563EB"/>
+                            <path d="M 44 30 Q 23 30 11 12" fill="none" stroke="#2563EB" stroke-width="2.6" stroke-linecap="round"/>
+                            <path d="M 46 30 Q 67 30 79 12" fill="none" stroke="#2563EB" stroke-width="2.6" stroke-linecap="round"/>
+                            <path d="M 44 21 Q 31 21 22 11" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M 46 21 Q 59 21 68 11" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+                            <circle cx="45" cy="14" r="2.6" fill="#1D4ED8"/>
+                        </g>
+                        <text x="900" y="222" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">MQTT</text>
+                    </g>
+
+                    <g class="api-node-big node-smarthome" filter="url(#medShadow)">
+                        <rect x="206" y="370" width="208" height="104" rx="28" fill="url(#nodeGradBig)"/>
+                        <rect x="214" y="378" width="192" height="88"  rx="24" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(268 390) scale(0.68)">
+                            <path d="M 74 4 L 6 52 L 142 52 Z" fill="none" stroke="#2563EB" stroke-width="2.6" stroke-linejoin="round"/>
+                            <rect x="20" y="56" width="110" height="52" rx="5" fill="none" stroke="#2563EB" stroke-width="2.6"/>
+                            <rect x="34" y="68" width="26" height="28" rx="2.5" fill="none" stroke="#3B82F6" stroke-width="2.2"/>
+                            <line x1="47" y1="68" x2="47" y2="96" stroke="#3B82F6" stroke-width="1.8"/>
+                            <line x1="34" y1="82" x2="60" y2="82" stroke="#3B82F6" stroke-width="1.8"/>
+                            <rect x="80" y="70" width="28" height="36" rx="2.5" fill="none" stroke="#3B82F6" stroke-width="2.2"/>
+                            <circle cx="102" cy="88" r="1.8" fill="#3B82F6"/>
+                            <rect x="114" y="36" width="14" height="20" rx="2.5" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+                            <circle cx="121" cy="30" r="2.8" fill="#60A5FA"/>
+                        </g>
+                        <text x="310" y="500" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">智能家居</text>
+                    </g>
+
+                    <g class="api-node-big node-pc" filter="url(#medShadow)">
+                        <rect x="966" y="370" width="208" height="104" rx="28" fill="url(#nodeGradBig)"/>
+                        <rect x="974" y="378" width="192" height="88"  rx="24" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(1000 390) scale(0.78)">
+                            <rect x="4" y="0" width="156" height="72" rx="10" fill="none" stroke="#2563EB" stroke-width="2.6"/>
+                            <rect x="12" y="8" width="140" height="52" rx="5" fill="#EFF6FF" stroke="#DBEAFE" stroke-width="1.2"/>
+                            <rect x="18" y="15" width="54" height="7" rx="3.5" fill="#2563EB" opacity="0.88"/>
+                            <rect x="18" y="27" width="86" height="3.6" rx="1.8" fill="#93C5FD"/>
+                            <rect x="18" y="35" width="70" height="3.6" rx="1.8" fill="#DBEAFE"/>
+                            <rect x="18" y="43" width="92" height="3.6" rx="1.8" fill="#93C5FD"/>
+                            <circle cx="132" cy="36" r="12" fill="none" stroke="#2563EB" stroke-width="2.2"/>
+                            <path d="M 132 26 L 132 36 L 140 40" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/>
+                            <rect x="56" y="72" width="52" height="10" rx="3" fill="none" stroke="#2563EB" stroke-width="2.2"/>
+                            <rect x="40" y="82" width="84" height="5" rx="2.5" fill="none" stroke="#2563EB" stroke-width="2.2"/>
+                        </g>
+                        <text x="1070" y="500" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">PC 助手</text>
+                    </g>
+
+                    <g class="api-node-big node-llm" filter="url(#medShadow)">
+                        <rect x="274" y="624" width="196" height="100" rx="26" fill="url(#nodeGradBig)"/>
+                        <rect x="282" y="632" width="180" height="84"  rx="22" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(302 646) scale(0.92)">
+                            <circle cx="52" cy="34" r="22" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+                            <path d="M 38 26 Q 52 14 66 26 Q 76 34 66 42 Q 52 54 38 42 Q 28 34 38 26 Z" fill="none" stroke="#3B82F6" stroke-width="2"/>
+                            <circle cx="46" cy="31" r="2.4" fill="#1D4ED8"/>
+                            <circle cx="58" cy="31" r="2.4" fill="#1D4ED8"/>
+                            <circle cx="52" cy="39" r="2.2" fill="#1D4ED8"/>
+                            <circle cx="14" cy="14" r="5.6" fill="none" stroke="#3B82F6" stroke-width="2"/>
+                            <circle cx="90" cy="14" r="5.6" fill="none" stroke="#3B82F6" stroke-width="2"/>
+                            <circle cx="16" cy="56" r="5.6" fill="none" stroke="#3B82F6" stroke-width="2"/>
+                            <circle cx="88" cy="56" r="5.6" fill="none" stroke="#3B82F6" stroke-width="2"/>
+                            <line x1="18" y1="16" x2="34" y2="23" stroke="#60A5FA" stroke-width="1.6" stroke-linecap="round"/>
+                            <line x1="88" y1="16" x2="72" y2="23" stroke="#60A5FA" stroke-width="1.6" stroke-linecap="round"/>
+                            <line x1="20" y1="54" x2="35" y2="42" stroke="#60A5FA" stroke-width="1.6" stroke-linecap="round"/>
+                            <line x1="86" y1="54" x2="71" y2="42" stroke="#60A5FA" stroke-width="1.6" stroke-linecap="round"/>
+                        </g>
+                        <text x="372" y="752" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">LLM 大脑</text>
+                    </g>
+
+                    <g class="api-node-big node-docs" filter="url(#medShadow)">
+                        <rect x="910" y="624" width="196" height="100" rx="26" fill="url(#nodeGradBig)"/>
+                        <rect x="918" y="632" width="180" height="84"  rx="22" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(938 648) scale(0.88)">
+                            <rect x="10" y="12" width="80" height="54" rx="5" fill="white" stroke="#2563EB" stroke-width="2.4"/>
+                            <rect x="22" y="9"  width="80" height="54" rx="5" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.4"/>
+                            <rect x="34" y="6"  width="80" height="54" rx="5" fill="white" stroke="#2563EB" stroke-width="2.4"/>
+                            <rect x="46" y="20" width="50" height="3.6" rx="1.8" fill="#3B82F6"/>
+                            <rect x="46" y="28" width="42" height="3.6" rx="1.8" fill="#93C5FD"/>
+                            <rect x="46" y="36" width="56" height="3.6" rx="1.8" fill="#DBEAFE"/>
+                            <rect x="46" y="44" width="38" height="3.6" rx="1.8" fill="#93C5FD"/>
+                            <path d="M 112 20 L 126 6 L 134 14 L 120 28 Z" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round"/>
+                        </g>
+                        <text x="1008" y="752" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">智能文档</text>
+                    </g>
+
+                    <g class="api-node-big node-tasks" filter="url(#medShadow)">
+                        <rect x="606" y="740" width="168" height="96" rx="26" fill="url(#nodeGradBig)"/>
+                        <rect x="614" y="748" width="152" height="80"  rx="22" fill="none" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(632 762) scale(0.94)">
+                            <circle cx="42" cy="32" r="24" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+                            <circle cx="42" cy="32" r="16" fill="none" stroke="#3B82F6" stroke-width="2"/>
+                            <circle cx="42" cy="32" r="6"  fill="#1D4ED8"/>
+                            <line x1="42" y1="15" x2="42" y2="25" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
+                            <line x1="42" y1="32" x2="54" y2="41" stroke="#2563EB" stroke-width="2.4" stroke-linecap="round"/>
+                            <rect x="88" y="10" width="36" height="44" rx="5" fill="none" stroke="#2563EB" stroke-width="2.4"/>
+                            <line x1="88" y1="22" x2="124" y2="22" stroke="#DBEAFE" stroke-width="1.6"/>
+                            <line x1="88" y1="32" x2="124" y2="32" stroke="#DBEAFE" stroke-width="1.6"/>
+                            <line x1="88" y1="42" x2="124" y2="42" stroke="#DBEAFE" stroke-width="1.6"/>
+                            <circle cx="94" cy="16" r="2"   fill="#10B981"/>
+                            <circle cx="94" cy="27" r="2"   fill="#F59E0B"/>
+                            <circle cx="94" cy="37" r="2"   fill="#EF4444"/>
+                        </g>
+                        <text x="690" y="864" text-anchor="middle" fill="#1E40AF" font-family="Poppins, sans-serif" font-weight="700" font-size="15">任务调度</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="layer layer-3" data-layer="3">
+        <div class="layer-content layer-3-content">
+            <div class="l3-head">
+                <div class="l3-kicker">— Security · Stability · Lightweight</div>
+                <h2 class="layer-title l3-title">安全 · 稳定 · 轻量</h2>
+                <p class="l3-sub">只读优先设计 · 守护你的设备安全底线</p>
+            </div>
+
+            <div class="l3-stage">
+                <svg class="l3-visual" viewBox="0 0 1120 760" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="l3ShieldG" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%"   stop-color="#DBEAFE"/>
+                            <stop offset="55%"  stop-color="#93C5FD"/>
+                            <stop offset="100%" stop-color="#60A5FA"/>
+                        </linearGradient>
+                        <linearGradient id="l3ShieldIn" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#EFF6FF" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="l3LockG" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="100%" stop-color="#EFF6FF"/>
+                        </linearGradient>
+                        <linearGradient id="l3ChipG" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="100%" stop-color="#F0F7FF"/>
+                        </linearGradient>
+                        <filter id="l3Soft" x="-40%" y="-40%" width="180%" height="180%">
+                            <feGaussianBlur stdDeviation="6" result="b"/>
+                            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                        <filter id="l3Big" x="-60%" y="-60%" width="220%" height="220%">
+                            <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#3B82F6" flood-opacity="0.28"/>
+                            <feDropShadow dx="0" dy="6"  stdDeviation="10" flood-color="#1D4ED8" flood-opacity="0.12"/>
+                        </filter>
+                    </defs>
+
+                    <g opacity="0.45">
+                        <circle cx="560" cy="280" r="240" fill="none" stroke="#BFDBFE" stroke-width="1.1" stroke-dasharray="2 8"/>
+                        <circle cx="560" cy="280" r="190" fill="none" stroke="#93C5FD" stroke-width="1"   stroke-dasharray="1.5 6"/>
+                        <circle cx="560" cy="280" r="140" fill="none" stroke="#60A5FA" stroke-width="0.9" stroke-dasharray="1 5"/>
+                    </g>
+
+                    <g transform="translate(560 288)" filter="url(#l3Big)">
+                        <path d="M 0 -190 L 150 -110 L 150 20 C 150 100 82 168 0 188 C -82 168 -150 100 -150 20 L -150 -110 Z"
+                              fill="#ffffff"/>
+                        <path d="M 0 -190 L 150 -110 L 150 20 C 150 100 82 168 0 188 C -82 168 -150 100 -150 20 L -150 -110 Z"
+                              fill="url(#l3ShieldG)"/>
+                        <path d="M 0 -145 L 112 -86 L 112 20 C 112 78 61 128 0 142 C -61 128 -112 78 -112 20 L -112 -86 Z"
+                              fill="url(#l3ShieldIn)"/>
+                        <path d="M -48 -10 L -14 28 L 60 -52" stroke="#1D4ED8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </g>
+
+                    <g class="l3-chip l3-chip-left" filter="url(#l3Soft)">
+                        <rect x="48"  y="128" width="264" height="126" rx="28" fill="url(#l3ChipG)" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(96 156)">
+                            <g transform="translate(0 0)">
+                                <circle cx="0"  cy="0" r="18"  fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.2"/>
+                                <circle cx="0"  cy="0" r="9"   fill="#3B82F6"/>
+                                <path d="M 0 -8 L 0 5 L 8 11" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <g transform="translate(56 -2)">
+                                <rect x="0"  y="0"  width="108" height="20" rx="5" fill="none" stroke="#2563EB" stroke-width="2"/>
+                                <line x1="6"  y1="9"  x2="102" y2="9"  stroke="#93C5FD" stroke-width="1.8"/>
+                                <line x1="6"  y1="15" x2="92"  y2="15" stroke="#DBEAFE" stroke-width="1.6"/>
+                                <rect x="0"  y="26" width="108" height="20" rx="5" fill="none" stroke="#2563EB" stroke-width="2"/>
+                                <line x1="6"  y1="35" x2="102" y2="35" stroke="#93C5FD" stroke-width="1.8"/>
+                                <line x1="6"  y1="41" x2="92"  y2="41" stroke="#DBEAFE" stroke-width="1.6"/>
+                            </g>
+                        </g>
+                        <text x="180" y="228" text-anchor="middle" fill="#1E3A8A" font-family="Poppins, sans-serif" font-weight="800" font-size="17">安全稳定</text>
+                        <text x="180" y="246" text-anchor="middle" fill="#2563EB" font-family="Inter, sans-serif" font-weight="500" font-size="11" letter-spacing="0.8">PERMISSION · SANDBOX · AUDIT</text>
+                    </g>
+
+                    <g class="l3-chip l3-chip-right" filter="url(#l3Soft)">
+                        <rect x="808" y="128" width="264" height="126" rx="28" fill="url(#l3ChipG)" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(860 158)">
+                            <g transform="translate(0 -4)">
+                                <rect x="0" y="0" width="62" height="46" rx="9" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.2"/>
+                                <rect x="8" y="7"  width="26" height="7"  rx="2.5" fill="#3B82F6"/>
+                                <rect x="8" y="19" width="46" height="5"  rx="2"   fill="#93C5FD"/>
+                                <rect x="8" y="30" width="36" height="5"  rx="2"   fill="#DBEAFE"/>
+                            </g>
+                            <g transform="translate(86 -2)">
+                                <circle cx="0" cy="0" r="12" fill="#3B82F6"/>
+                                <path d="M 0 -7 L 7 0 L 0 7 L -7 0 Z" fill="white"/>
+                            </g>
+                            <g transform="translate(78 36)">
+                                <rect x="0" y="0" width="48" height="11" rx="3.5" fill="none" stroke="#2563EB" stroke-width="2"/>
+                                <path d="M 4 6 L 8 10 L 20 0" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </g>
+                        </g>
+                        <text x="940" y="228" text-anchor="middle" fill="#1E3A8A" font-family="Poppins, sans-serif" font-weight="800" font-size="17">极致轻量化</text>
+                        <text x="940" y="246" text-anchor="middle" fill="#2563EB" font-family="Inter, sans-serif" font-weight="500" font-size="11" letter-spacing="0.8">LIGHT · FAST · EMBEDDED-FRIENDLY</text>
+                    </g>
+
+                    <g class="l3-chip l3-chip-bottom" filter="url(#l3Soft)">
+                        <rect x="368" y="550" width="384" height="126" rx="28" fill="url(#l3ChipG)" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <g transform="translate(422 578)">
+                            <rect x="0"   y="0" width="50" height="50" rx="14" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.2"/>
+                            <path d="M 17 20 L 17 32" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M 25 14 Q 33 14 33 22 L 33 25 L 25 25 Q 25 21 27 19" fill="#3B82F6"/>
+                            <circle cx="25" cy="36" r="2.2" fill="#3B82F6"/>
+                            <g transform="translate(86 4)">
+                                <line x1="0"   y1="8"  x2="186" y2="8"  stroke="#DBEAFE" stroke-width="2.2" stroke-linecap="round"/>
+                                <line x1="0"   y1="20" x2="154" y2="20" stroke="#93C5FD" stroke-width="2.2" stroke-linecap="round"/>
+                                <line x1="0"   y1="32" x2="200" y2="32" stroke="#DBEAFE" stroke-width="2.2" stroke-linecap="round"/>
+                                <circle cx="196" cy="8"  r="4.6" fill="#10B981"/>
+                                <circle cx="162" cy="20" r="4.6" fill="#3B82F6"/>
+                                <circle cx="208" cy="32" r="4.6" fill="#60A5FA"/>
+                            </g>
+                        </g>
+                        <text x="560" y="650" text-anchor="middle" fill="#1E3A8A" font-family="Poppins, sans-serif" font-weight="800" font-size="17">只读原则 · 守护底线</text>
+                        <text x="560" y="668" text-anchor="middle" fill="#2563EB" font-family="Inter, sans-serif" font-weight="600" font-size="12.5" letter-spacing="1.2">READ·ONLY PRINCIPLE</text>
+                    </g>
+
+                    <g class="l3-conn-lines" opacity="0.75">
+                        <path d="M 312 195 C 400 222 480 242 510 260" fill="none" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 10">
+                            <animate attributeName="stroke-dashoffset" values="0;-28" dur="1.8s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 808 195 C 720 222 640 242 610 260" fill="none" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 10">
+                            <animate attributeName="stroke-dashoffset" values="0;28" dur="1.8s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 560 430 C 560 470 560 510 560 550" fill="none" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 10">
+                            <animate attributeName="stroke-dashoffset" values="0;-28" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <circle cx="312" cy="195" r="7" fill="#ffffff" stroke="#3B82F6" stroke-width="2" filter="url(#l3Soft)"/>
+                        <circle cx="808" cy="195" r="7" fill="#ffffff" stroke="#3B82F6" stroke-width="2" filter="url(#l3Soft)"/>
+                        <circle cx="560" cy="550" r="7" fill="#ffffff" stroke="#3B82F6" stroke-width="2" filter="url(#l3Soft)"/>
+                    </g>
+                </svg>
+
+                <div class="l3-note l3-note-a"><span>01</span>多层权限隔离 · 沙箱执行 · 全链路审计追踪</div>
+                <div class="l3-note l3-note-b"><span>02</span>精简架构 · 极低资源占用 · 嵌入式设备友好</div>
+                <div class="l3-note l3-note-c l3-note-under"><span>03</span><b>仅限查询 / 总结 / 上报</b>，未经用户授权绝无写入与控制权</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="layer layer-4" data-layer="4">
+        <div class="layer-content layer-4-content">
+            <div class="l4-head">
+                <div class="l4-kicker">— Real-world Scenarios</div>
+                <h2 class="layer-title l4-title">适用场景 · 万物皆可协同</h2>
+                <p class="l4-sub">从智能家居到个人助手，让设备真正理解你的需求</p>
+            </div>
+
+            <div class="l4-stage">
+                <div class="scene-panel scene-home-p">
+                    <div class="scene-tag">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M4 12 L 12 5 L 20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10 V 20 H 18 V 10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                        <span>01 · 智能家居中枢</span>
+                    </div>
+                    <svg class="scene-svg" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="homeSky" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#EFF6FF"/>
+                                <stop offset="100%" stop-color="#ffffff"/>
+                            </linearGradient>
+                            <linearGradient id="homeBody" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#ffffff"/>
+                                <stop offset="100%" stop-color="#F0F7FF"/>
+                            </linearGradient>
+                            <filter id="homeGlow" x="-40%" y="-40%" width="180%" height="180%">
+                                <feGaussianBlur stdDeviation="3"/>
+                            </filter>
+                        </defs>
+                        <rect x="12" y="12" width="336" height="276" rx="28" fill="url(#homeSky)" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <circle cx="62" cy="48" r="16" fill="#FEE2E2" opacity="0.85"/>
+                        <circle cx="310" cy="56" r="20" fill="#DBEAFE" opacity="0.9"/>
+                        <circle cx="296" cy="44" r="14" fill="#EFF6FF" opacity="0.95"/>
+
+                        <path d="M 40 150 L 180 62 L 320 150 L 320 268 L 40 268 Z" fill="#ffffff" stroke="#3B82F6" stroke-width="2.2" stroke-linejoin="round"/>
+                        <path d="M 40 150 L 180 62 L 320 150" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2.2" stroke-linejoin="round"/>
+                        <rect x="78"  y="175" width="70" height="55" rx="8"  fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+                        <line x1="113" y1="175" x2="113" y2="230" stroke="#2563EB" stroke-width="1.8"/>
+                        <line x1="78"  y1="202" x2="148" y2="202" stroke="#2563EB" stroke-width="1.8"/>
+                        <circle cx="140" cy="202" r="3" fill="#FCD34D" filter="url(#homeGlow)"/>
+                        <rect x="180" y="178" width="118" height="52" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="2"/>
+                        <rect x="192" y="190" width="94"  height="14" rx="4"  fill="#3B82F6"/>
+                        <circle cx="294" cy="197" r="3" fill="#F87171"/>
+                        <rect x="192" y="210" width="70"  height="6"  rx="3"  fill="#DBEAFE"/>
+                        <rect x="192" y="220" width="50"  height="6"  rx="3"  fill="#EFF6FF"/>
+                        <rect x="155" y="235" width="50" height="33" rx="8" fill="#BFDBFE" stroke="#2563EB" stroke-width="2"/>
+                        <circle cx="192" cy="251" r="2.4" fill="#1D4ED8"/>
+                        <circle cx="155" cy="242" r="4" fill="#60A5FA" filter="url(#homeGlow)" opacity="0.8"/>
+                        <circle cx="306" cy="160" r="3.2" fill="#60A5FA" filter="url(#homeGlow)" opacity="0.8"/>
+                        <path d="M 180 120 L 180 150" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="2 3"/>
+                        <text x="180" y="114" text-anchor="middle" fill="#1D4ED8" font-family="Inter, sans-serif" font-weight="700" font-size="10">MiniC Hub</text>
+                        <circle cx="180" cy="122" r="4" fill="#3B82F6" filter="url(#homeGlow)"/>
+                    </svg>
+                    <div class="scene-points">
+                        <div class="sp"><span class="sp-dot"></span>语音联动 · 全屋设备一句话控制</div>
+                        <div class="sp"><span class="sp-dot"></span>到家 / 离家 / 睡眠 · 场景定时触发</div>
+                        <div class="sp"><span class="sp-dot"></span>能耗账单自动生成 · 优化建议</div>
+                    </div>
+                </div>
+
+                <div class="scene-panel scene-pc-p">
+                    <div class="scene-tag">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 20 H 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 17 V 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <span>02 · 个人电脑助手</span>
+                    </div>
+                    <svg class="scene-svg" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="pcBg" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#EFF6FF"/>
+                                <stop offset="100%" stop-color="#ffffff"/>
+                            </linearGradient>
+                            <linearGradient id="pcScreen" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#1E3A8A"/>
+                                <stop offset="100%" stop-color="#2563EB"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="12" y="12" width="336" height="276" rx="28" fill="url(#pcBg)" stroke="#BFDBFE" stroke-width="1.6"/>
+                        <rect x="52" y="42" width="256" height="168" rx="16" fill="#0F172A"/>
+                        <rect x="64" y="54" width="232" height="144" rx="10" fill="url(#pcScreen)"/>
+                        <g transform="translate(78 70)">
+                            <circle cx="6"  cy="0" r="4" fill="#F87171"/>
+                            <circle cx="18" cy="0" r="4" fill="#FCD34D"/>
+                            <circle cx="30" cy="0" r="4" fill="#34D399"/>
+                            <text x="112" y="4" text-anchor="middle" fill="#BFDBFE" font-family="Inter, sans-serif" font-weight="600" font-size="10">MiniC Assistant</text>
+                        </g>
+                        <g transform="translate(78 88)">
+                            <g>
+                                <rect x="108" y="0" width="100" height="28" rx="14" fill="#DBEAFE"/>
+                                <text x="158" y="19" text-anchor="middle" fill="#1E3A8A" font-family="Inter, sans-serif" font-weight="600" font-size="11">今天日程？</text>
+                            </g>
+                            <g transform="translate(0 36)">
+                                <rect x="0" y="0" width="164" height="34" rx="16" fill="#ffffff" fill-opacity="0.15" stroke="#93C5FD" stroke-width="1.2"/>
+                                <g transform="translate(14 12)">
+                                    <rect x="0" y="0" width="10" height="10" rx="1.8" fill="none" stroke="#DBEAFE" stroke-width="1.1"/>
+                                    <line x1="0" y1="3.2" x2="10" y2="3.2" stroke="#DBEAFE" stroke-width="1"/>
+                                    <line x1="3.2" y1="0" x2="3.2" y2="-2" stroke="#DBEAFE" stroke-width="1.1" stroke-linecap="round"/>
+                                    <line x1="6.8" y1="0" x2="6.8" y2="-2" stroke="#DBEAFE" stroke-width="1.1" stroke-linecap="round"/>
+                                </g>
+                                <text x="30" y="22" fill="#EFF6FF" font-family="Inter, sans-serif" font-weight="500" font-size="11">3 个会议 · 已整理文档</text>
+                            </g>
+                            <g transform="translate(0 82)">
+                                <rect x="0" y="0" width="180" height="28" rx="14" fill="#ffffff" fill-opacity="0.15" stroke="#93C5FD" stroke-width="1.2"/>
+                                <g transform="translate(14 9)">
+                                    <path d="M0 2 L0 7.8 Q0 9.2 1.4 9.2 L7.2 9.2 Q8.6 9.2 8.6 7.8 L8.6 2 Z" fill="none" stroke="#DBEAFE" stroke-width="1.1"/>
+                                    <line x1="1.4" y1="0" x2="7.2" y2="0" stroke="#DBEAFE" stroke-width="1.1" stroke-linecap="round"/>
+                                    <path d="M8.6 3.4 Q10.4 3.4 10.4 5.6 Q10.4 7.8 8.6 7.8" fill="none" stroke="#DBEAFE" stroke-width="1"/>
+                                    <ellipse cx="4.3" cy="-1.4" rx="2.6" ry="0.9" fill="none" stroke="#DBEAFE" stroke-width="0.9"/>
+                                </g>
+                                <text x="30" y="18" fill="#EFF6FF" font-family="Inter, sans-serif" font-weight="500" font-size="11">15:00 提醒您休息</text>
+                            </g>
+                        </g>
+                        <rect x="148" y="210" width="64"  height="14" rx="4" fill="#BFDBFE"/>
+                        <rect x="120" y="222" width="120" height="10" rx="5" fill="#DBEAFE"/>
+                        <rect x="100" y="232" width="160" height="16" rx="8" fill="#ffffff" stroke="#3B82F6" stroke-width="1.8"/>
+                        <circle cx="260" cy="142" r="20" fill="#BFDBFE" opacity="0.4"/>
+                        <circle cx="100" cy="110" r="12" fill="#93C5FD" opacity="0.3"/>
+                    </svg>
+                    <div class="scene-points">
+                        <div class="sp"><span class="sp-dot"></span>日程 · 会议 · 专注休息 · 智能提醒</div>
+                        <div class="sp"><span class="sp-dot"></span>文件自动归档 · 目录一触即达</div>
+                        <div class="sp"><span class="sp-dot"></span>快捷键流 · 效率提升立竿见影</div>
+                    </div>
+                </div>
+
+                <div class="scene-panel scene-comm-p">
+                    <div class="scene-tag">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="5"  cy="5"  r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="5"  r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="5"  cy="19" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="19" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M7 6 L 10.5 10.5 M 17 6 L 13.5 10.5 M 7 18 L 10.5 13.5 M 17 18 L 13.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <span>03 · 设备互联协同</span>
+                    </div>
+                    <svg class="scene-svg" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="commBg" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#EFF6FF"/>
+                                <stop offset="100%" stop-color="#ffffff"/>
+                            </linearGradient>
+                            <radialGradient id="commCenter" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#ffffff"/>
+                                <stop offset="75%" stop-color="#DBEAFE"/>
+                                <stop offset="100%" stop-color="#93C5FD" stop-opacity="0.3"/>
+                            </radialGradient>
+                        </defs>
+                        <rect x="12" y="12" width="336" height="276" rx="28" fill="url(#commBg)" stroke="#BFDBFE" stroke-width="1.6"/>
+
+                        <g stroke="#93C5FD" stroke-width="2" stroke-dasharray="4 6" stroke-linecap="round" fill="none" opacity="0.9">
+                            <path d="M 180 150 L 76 94"/>
+                            <path d="M 180 150 L 284 94"/>
+                            <path d="M 180 150 L 76 208"/>
+                            <path d="M 180 150 L 284 208"/>
+                            <path d="M 180 150 L 60 150"/>
+                            <path d="M 180 150 L 300 150"/>
+                        </g>
+                        <circle cx="180" cy="150" r="56" fill="url(#commCenter)"/>
+                        <circle cx="180" cy="150" r="40" fill="#ffffff" stroke="#3B82F6" stroke-width="2.2"/>
+                        <text x="180" y="144" text-anchor="middle" fill="#1E3A8A" font-family="Poppins, sans-serif" font-weight="800" font-size="16">MiniC</text>
+                        <text x="180" y="164" text-anchor="middle" fill="#2563EB" font-family="Inter, sans-serif" font-weight="600" font-size="9.5" letter-spacing="1.6">HUB · 中枢</text>
+
+                        <g transform="translate(60 94)">
+                            <rect x="-20" y="-28" width="40" height="56" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="2"/>
+                            <rect x="-14" y="-22" width="28" height="34" rx="3" fill="#3B82F6"/>
+                            <circle cx="0" cy="20" r="3" fill="#1D4ED8"/>
+                            <text x="0" y="46" text-anchor="middle" fill="#1E3A8A" font-family="Inter, sans-serif" font-weight="700" font-size="10">Phone</text>
+                        </g>
+                        <g transform="translate(300 94)">
+                            <circle cx="0" cy="0" r="22" fill="#ffffff" stroke="#2563EB" stroke-width="2"/>
+                            <circle cx="0" cy="0" r="16" fill="none" stroke="#3B82F6" stroke-width="1.8"/>
+                            <circle cx="0" cy="0" r="10" fill="#BFDBFE"/>
+                            <circle cx="0" cy="-14" r="1.4" fill="#1D4ED8"/>
+                            <path d="M 0 -6 L 0 6 L 4 8" stroke="#2563EB" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <text x="0" y="46" text-anchor="middle" fill="#1E3A8A" font-family="Inter, sans-serif" font-weight="700" font-size="10">Watch</text>
+                        </g>
+                        <g transform="translate(60 208)">
+                            <rect x="-22" y="-20" width="44" height="40" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="2"/>
+                            <rect x="-16" y="-14" width="32" height="16" rx="3" fill="#3B82F6"/>
+                            <circle cx="-10" cy="18" r="2.5" fill="#1D4ED8"/>
+                            <circle cx="0"   cy="18" r="2.5" fill="#1D4ED8"/>
+                            <circle cx="10"  cy="18" r="2.5" fill="#1D4ED8"/>
+                            <text x="0" y="46" text-anchor="middle" fill="#1E3A8A" font-family="Inter, sans-serif" font-weight="700" font-size="10">Tablet</text>
+                        </g>
+                        <g transform="translate(300 208)">
+                            <rect x="-22" y="-24" width="44" height="48" rx="10" fill="#ffffff" stroke="#2563EB" stroke-width="2"/>
+                            <circle cx="0" cy="-8" r="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.8"/>
+                            <path d="M -6 4 L 6 4 M 0 -2 L 0 8" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="-14" y="8"  width="28" height="6" rx="2" fill="#3B82F6"/>
+                            <rect x="-14" y="16" width="20" height="6" rx="2" fill="#93C5FD"/>
+                            <text x="0" y="46" text-anchor="middle" fill="#1E3A8A" font-family="Inter, sans-serif" font-weight="700" font-size="10">IoT</text>
+                        </g>
+                        <g transform="translate(16 150)">
+                            <rect x="0" y="-20" width="34" height="40" rx="8" fill="#ffffff" stroke="#2563EB" stroke-width="2"/>
+                            <path d="M 10 -8 L 24 -8 L 24 10 L 10 10 Z" fill="#BFDBFE" stroke="#2563EB" stroke-width="1.6"/>
+                            <circle cx="17" cy="1" r="2" fill="#10B981"/>
+                        </g>
+                        <g transform="translate(344 150)">
+                            <rect x="-34" y="-20" width="34" height="40" rx="8" fill="#ffffff" stroke="#2563EB" stroke-width="2"/>
+                            <path d="M -24 -8 L -10 -8 L -10 10 L -24 10 Z" fill="#BFDBFE" stroke="#2563EB" stroke-width="1.6"/>
+                            <circle cx="-17" cy="1" r="2" fill="#F59E0B"/>
+                        </g>
+                    </svg>
+                    <div class="scene-points">
+                        <div class="sp"><span class="sp-dot"></span>跨平台数据互通 · 一处更新处处同步</div>
+                        <div class="sp"><span class="sp-dot"></span>多设备任务分解 · 协同执行</div>
+                        <div class="sp"><span class="sp-dot"></span>统一入口无缝接管 · 切换无感知</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="layer layer-5" data-layer="5">
+        <div class="layer-content">
+            <div class="thanks-wrap">
+                <div class="thanks-hearts">
+                    <span class="heart h1">
+                        <svg viewBox="0 0 30 28" width="28" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 26 C15 26 2 19.5 2 12.2 C2 8.3 5.3 5.5 8.8 5.5 C11.5 5.5 13.4 6.9 15 9.1 C16.6 6.9 18.5 5.5 21.2 5.5 C24.7 5.5 28 8.3 28 12.2 C28 19.5 15 26 15 26 Z" fill="#60A5FA" stroke="#3B82F6" stroke-width="1.6" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="heart h2">
+                        <svg viewBox="0 0 30 28" width="28" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 26 C15 26 2 19.5 2 12.2 C2 8.3 5.3 5.5 8.8 5.5 C11.5 5.5 13.4 6.9 15 9.1 C16.6 6.9 18.5 5.5 21.2 5.5 C24.7 5.5 28 8.3 28 12.2 C28 19.5 15 26 15 26 Z" fill="#60A5FA" stroke="#3B82F6" stroke-width="1.6" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="heart h3">
+                        <svg viewBox="0 0 30 28" width="28" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 26 C15 26 2 19.5 2 12.2 C2 8.3 5.3 5.5 8.8 5.5 C11.5 5.5 13.4 6.9 15 9.1 C16.6 6.9 18.5 5.5 21.2 5.5 C24.7 5.5 28 8.3 28 12.2 C28 19.5 15 26 15 26 Z" fill="#60A5FA" stroke="#3B82F6" stroke-width="1.6" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </div>
+                <h2 class="thanks-title">
+                    <span class="thanks-word">谢</span>
+                    <span class="thanks-word">谢</span>
+                    <span class="thanks-word">支</span>
+                    <span class="thanks-word">持</span>
+                </h2>
+                <p class="thanks-subtitle">Thank You for Your Support</p>
+
+                <div class="thanks-card">
+                    <p class="thanks-text">
+                        每一颗 Star、每一个 Issue、每一次 PR，都是 MiniC 前行的动力。
+                    </p>
+                    <p class="thanks-text">
+                        开源的路上，感谢有你同行。欢迎在 GitHub 上留下你的足迹，
+                        让我们一起把物联网 Agent 做得更好！<svg viewBox="0 0 16 16" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:-2px;display:inline-block;margin-left:2px;"><path d="M8 1 L8.7 4.6 L12.3 4.2 L9.7 6.6 L10.7 10.3 L8 8.4 L5.3 10.3 L6.3 6.6 L3.7 4.2 L7.3 4.6 Z" fill="#F59E0B" stroke="#D97706" stroke-width="0.6" stroke-linejoin="round"/></svg>
+                    </p>
+
+                    <a href="https://github.com/Yu-Sea" target="_blank" class="github-btn">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                        <span>Visit GitHub</span>
+                    </a>
+                </div>
+
+                <div class="footer-sign">
+                    <p>Made with <svg viewBox="0 0 14 13" width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:-1px;display:inline-block;margin:0 2px;"><path d="M7 12 C7 12 1 9.1 1 5.8 C1 4 2.6 2.7 4.3 2.7 C5.6 2.7 6.5 3.3 7 4.3 C7.5 3.3 8.4 2.7 9.7 2.7 C11.4 2.7 13 4 13 5.8 C13 9.1 7 12 7 12 Z" fill="#60A5FA" stroke="#3B82F6" stroke-width="0.8" stroke-linejoin="round"/></svg> by <a href="https://github.com/Yu-Sea" target="_blank">Yu-Sea</a></p>
+                    <p class="mini-text">MiniC · Lightweight IoT Central Agent</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
