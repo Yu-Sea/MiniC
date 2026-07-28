@@ -1865,7 +1865,8 @@ body {
     color: #64748B;
     margin: 0;
 }
-.l3-stage { position: relative; width: min(1140px, 100%); padding-bottom: 16px; }
+.l3-head { padding-top: 30px; }
+.l3-stage { position: relative; width: min(1140px, 100%); padding-bottom: 16px; transform: scale(0.75); transform-origin: 50% 0%; margin-bottom: -20%; }
 .l3-visual { width: 100%; display: block; }
 
 .l3-chip {
@@ -1917,7 +1918,7 @@ body {
     transform: none;
     max-width: 620px;
     width: 100%;
-    margin: -64px auto 0;
+    margin: -114px auto 0;
     padding-left: 54px;
     text-align: center;
 }
